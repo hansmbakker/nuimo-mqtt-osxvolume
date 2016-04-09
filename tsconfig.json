@@ -1,0 +1,22 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noEmitOnError": true,
+        "noImplicitAny": true,
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        //"sourceRoot": "src",
+        "outDir": "bld",
+        "declaration": true 
+    },
+    "files": [
+        "src/Settings.ts",
+        "src/NuimoMQTTClient.ts",
+        "src/OsxVolumeClient.ts",
+        "src/main.ts",
+        "typings/main.d.ts"
+    ]
+}

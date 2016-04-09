@@ -1,0 +1,11 @@
+{
+  "name": "nuimo-mqtt-osxvolume",
+  "dependencies": {},
+  "devDependencies": {},
+  "ambientDependencies": {
+    "jsonfile": "file:src/typings/jsonfile/index.d.ts",
+    "mqtt": "github:DefinitelyTyped/DefinitelyTyped/mqtt/mqtt.d.ts#1649285384102480e8a1b6a45196f9686f2d3ba4",
+    "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#48c1e3c1d6baefa4f1a126f188c27c4fefd36bff",
+    "osx-vol": "file:src/typings/osx-vol/index.d.ts"
+  }
+}
