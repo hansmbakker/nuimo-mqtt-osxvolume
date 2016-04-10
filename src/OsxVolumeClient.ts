@@ -43,7 +43,7 @@ export default class OsxVolumeClient extends NuimoMQTTClient {
         newVol = Math.max(0, newVol);
         newVol = Math.min(newVol, 1);
 
-        this.sendProgressBarIcon(nuimoUuid, newVol, NuimoProgressBarStyle.VolumeBar);
+        this.sendProgressBarIcon(nuimoUuid, newVol, NuimoProgressBarStyle.VolumeBar, 1, 0.5);
 
         this.lastVol = newVol;
         await osxVol.set(newVol);
@@ -52,11 +52,11 @@ export default class OsxVolumeClient extends NuimoMQTTClient {
     toggleMute = async function(nuimoUuid: string, event: NuimoGestureEvent) {
         let isMuted = (await osxVol.get() === 0);
         if (isMuted) {
-            this.sendNamedIcon(nuimoUuid, "speaker");
+            this.sendNamedIcon(nuimoUuid, "speaker", 1, 0.5);
             await osxVol.set(this.lastVol);
         }
         else {
-            this.sendNamedIcon(nuimoUuid, "mutedSpeaker");
+            this.sendNamedIcon(nuimoUuid, "mutedSpeaker", 1, 0.5);
             await osxVol.set(0);
         }
     };

@@ -12,7 +12,7 @@ if (!fs.existsSync(configurationFile)) {
 export function setupInitialConfig(): void {
     let emptyConfig = {
         mqtt: {
-            host: "ws://broker.mqttdashboard.com:8000"
+            host: "ws://broker.hivemq.com:8000"
         }
     };
     jsonfile.writeFileSync(configurationFile, emptyConfig);

@@ -96,12 +96,15 @@ export abstract class NuimoMQTTClient {
         this.sendNuimoMQTTClientMessage(nuimoUuid, messageObject);
     }
 
-    sendProgressBarIcon(nuimoUuid: string, value: number, style: NuimoProgressBarStyle, duration?: number): void {
+    sendProgressBarIcon(nuimoUuid: string, value: number, style: NuimoProgressBarStyle, brightness?: number, duration?: number): void {
         let messageObject: any = {
             command: "showProgressBarIcon",
             value: value,
             style: style
         };
+        if (brightness) {
+            messageObject.brightness = brightness;
+        }
         if (duration) {
             messageObject.duration = duration;
         }
@@ -109,11 +112,14 @@ export abstract class NuimoMQTTClient {
         this.sendNuimoMQTTClientMessage(nuimoUuid, messageObject);
     }
 
-    sendNamedIcon(nuimoUuid: string, iconName: string, duration?: number): void {
+    sendNamedIcon(nuimoUuid: string, iconName: string, brightness?: number, duration?: number): void {
         let messageObject: any = {
             command: "showNamedIcon",
             iconName: iconName
         };
+        if (brightness) {
+            messageObject.brightness = brightness;
+        }
         if (duration) {
             messageObject.duration = duration;
         }
